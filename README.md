@@ -191,14 +191,14 @@ Example:
 
 ```java
 public interface ProductFactory {
-    Product createProduct(String name, double price);
+    ProductAdapter createProduct(String name, double price);
 }
 ```
 ```java
 public class ConcreteProductFactory implements ProductFactory {
     @Override
-    public Product createProduct(String name, double price) {
-        return new ConcreteProduct(name, price);
+    public ProductAdapter createProduct(String name, double price) {
+        return new ProductAdapter(name, price);
     }
 }
 ```

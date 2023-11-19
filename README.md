@@ -7,8 +7,9 @@
 * Zhumagali Dastan
 * Nurzhanuly Yernur
 
-## Project Overview
-Welcome to the README file for the Shopping Cart project by our dedicated team. Below, we provide an overview of the project, detailing its idea, purpose, and objectives.
+<h1 align="center">Project Overview <h1>
+
+### Welcome to the README file for the Shopping Cart project by our dedicated team. Below, we provide an overview of the project, detailing its idea, purpose, and objectives.
 
 ### Idea of the Project
 Our project, the "Online Shopping Cart," is designed to facilitate a seamless online shopping experience. Users can add products to their cart, view the cart, and proceed to checkout using various payment methods. The system also includes employee-specific functionalities for product management.
@@ -16,7 +17,7 @@ Our project, the "Online Shopping Cart," is designed to facilitate a seamless on
 ### Purpose of the Work
 The purpose of our work is to create a robust and user-friendly online shopping platform. Our objectives include implementing core features like product addition, cart management, and checkout, as well as incorporating design patterns and strategies for extensibility and maintainability.
 
-## Main Body
+<h1 align="center">Main Body<h1>
 
 ### Features
 1. Product Management (Employee Only):
@@ -203,15 +204,14 @@ public class ConcreteProductFactory implements ProductFactory {
 ```
 In the example, ConcreteProductFactory implements the ProductFactory interface to create concrete products.
 
-### UML Diagram
+<h1 align="center">UML Diagram<h1>
+
 ![UML Diagram](path/to/your/uml/diagram.png)
 *Add a brief description of the UML diagram and how it represents the structure of the design patterns used in your project.*
 
-## Conclusion
-In conclusion, our project successfully provides a comprehensive online shopping experience. Key points include the implementation of the observer, decorator, and factory patterns to enhance extensibility and maintainability.
+<h1 align="center">Conclusion<h1>
 
-### Project Outcomes
-Our project has resulted in a functional online shopping cart system. We faced challenges in [mention challenges], but collaborative efforts led to successful solutions.
+#### In conclusion, our project successfully provides a comprehensive online shopping experience. Key points include the implementation of the observer, decorator, and factory patterns to enhance extensibility and maintainability.
 
 ### Future Improvements
 Future improvements may include:

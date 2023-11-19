@@ -3,7 +3,6 @@ package com.shoppingcart;
 import com.shoppingcart.adapter.Product;
 import com.shoppingcart.observer.CartObserver;
 import com.shoppingcart.observer.CartSubject;
-import com.shoppingcart.Factory.ProductManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,16 +40,6 @@ public class ShoppingCart implements CartSubject {
             total += item.getPrice();
         }
         return total;
-    }
-
-    @Override
-    public void addObserver(CartObserver observer) {
-        observers.add(observer);
-    }
-
-    @Override
-    public void removeObserver(CartObserver observer) {
-        observers.remove(observer);
     }
 
     @Override

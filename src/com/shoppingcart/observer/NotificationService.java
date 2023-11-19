@@ -16,7 +16,7 @@ public class NotificationService implements CartObserver {
 
     @Override
     public void update() {
-        // In a real implementation, you could send notifications to users.
+        // In a real implementation, send notifications to users.
         for (String notification : notifications) {
             System.out.println("Notification: " + notification);
         }

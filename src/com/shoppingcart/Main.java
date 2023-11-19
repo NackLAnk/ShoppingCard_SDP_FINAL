@@ -1,12 +1,14 @@
 package com.shoppingcart;
 
 import com.shoppingcart.adapter.Product;
+import com.shoppingcart.adapter.ProductAdapter;
 import com.shoppingcart.strategy.CashOnDeliveryPayment;
 import com.shoppingcart.strategy.CreditCardPayment;
 import com.shoppingcart.strategy.PayPalPayment;
 import com.shoppingcart.strategy.PaymentStrategy;
 import com.shoppingcart.observer.NotificationService;
 import com.shoppingcart.Factory.ConcreteProductFactory;
+import com.shoppingcart.Factory.ProductFactory;
 import com.shoppingcart.Factory.ProductManager;
 import com.shoppingcart.decorator.ExtendedWarrantyDecorator;
 
@@ -89,7 +91,7 @@ public class Main {
                     break;
 
                 case 1:
-                    addProductToCart(scanner, cart, productManager.getProducts());
+                    addProductToCart(scanner, cart, productManager.getProducts(), new ConcreteProductFactory());
                     break;
                 case 2:
                     viewCart(scanner, cart, productManager.getProducts());
@@ -109,7 +111,7 @@ public class Main {
         }
     }
 
-    private static void addProductToCart(Scanner scanner, ShoppingCart cart, List<Product> products) {
+    private static void addProductToCart(Scanner scanner, ShoppingCart cart, List<Product> products, ProductFactory productFactory) {
         System.out.println("Available products:");
         for (int i = 0; i < products.size(); i++) {
             Product product = products.get(i);
@@ -130,7 +132,11 @@ public class Main {
         }
 
         Product selectedProduct = products.get(productNumber - 1);
-        cart.addProduct(selectedProduct);
+
+        ProductAdapter productAdapter = productFactory.createProduct(selectedProduct.getName(), selectedProduct.getPrice());
+
+        cart.addProduct(productAdapter);
+
         System.out.println(selectedProduct.getName() + " added to the cart.");
     }
 
@@ -241,6 +247,5 @@ public class Main {
         notificationService.addNotification("Shipped: ETA 1-2 days.");
 
         notificationService.update();
-        System.exit(0);
     }
 }
